@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Booking</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Booking</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-searchbar (keydown)="filter()" [(ngModel)]="search" ></ion-searchbar>
+  <ion-button (click)="goHome()">HOME</ion-button>
+  <ion-infinite-scroll-content>
+    <ion-list>
+      <ion-item *ngFor="let b of bookings | filterBy:userFilter">
+        <ion-label>{{b.id}}</ion-label>
+        <ion-label>{{b.student.first_name}}</ion-label>
+        <ion-label>{{b.student.last_name}}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-infinite-scroll-content>
+</ion-content>

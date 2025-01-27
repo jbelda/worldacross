@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">home</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-item-group>
+    <ion-item>
+      <ion-button (click)="goTutors()">TUTORS</ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-button (click)="goUsers()">USERS</ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-button (click)="goBooking()">BOOKING</ion-button>
+    </ion-item>
+  </ion-item-group>
+</ion-content>

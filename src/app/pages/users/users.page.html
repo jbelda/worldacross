@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Users</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">users</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-button (click)="goHome()">HOME</ion-button>
+  <ion-infinite-scroll-content>
+    <ion-list>
+      <ion-item *ngFor="let t of users">
+        <ion-label>{{t.id}}</ion-label>
+        <ion-label>{{t.first_name}}</ion-label>
+        <ion-label>{{t.last_name}}</ion-label>
+        <ion-button (click)="userDetail('user/'+t.id)">Detail</ion-button>
+      </ion-item>
+    </ion-list>
+  </ion-infinite-scroll-content>
+</ion-content>
